@@ -19,7 +19,7 @@ export function SideBar({handleClickButton, selectedGenreId} : SideBarProps) {
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
   
   useEffect(() => {
-    api.get<GenreResponseProps>('genres').then(response => {
+    api.get<GenreResponseProps[]>('genres').then(response => {
       setGenres(response.data);
     })
   }, []);
